@@ -32,50 +32,22 @@ function ToothMesh() {
       <Float speed={1.6} rotationIntensity={0.25} floatIntensity={0.9}>
         {/* Crown */}
         <mesh position={[0, 0.55, 0]} scale={[1.15, 1, 1.15]}>
-          <sphereGeometry args={[0.9, 96, 96]} />
-          <MeshTransmissionMaterial
-            thickness={0.9}
-            roughness={0.05}
-            transmission={1}
-            ior={1.35}
-            chromaticAberration={0.04}
-            anisotropy={0.15}
-            distortion={0.15}
-            distortionScale={0.3}
-            color={"#ffffff"}
-            attenuationColor={"#d7ece2"}
-            attenuationDistance={1.6}
-          />
+          <sphereGeometry args={[0.9, 32, 32]} />
+          <meshPhysicalMaterial color="#ffffff" roughness={0.15} metalness={0} clearcoat={0.3} />
         </mesh>
         {/* Left root */}
         <mesh position={[-0.38, -0.55, 0]} rotation={[0, 0, 0.15]}>
           <capsuleGeometry args={[0.28, 0.85, 12, 24]} />
-          <MeshTransmissionMaterial
-            thickness={0.7}
-            roughness={0.08}
-            transmission={1}
-            ior={1.3}
-            color={"#ffffff"}
-            attenuationColor={"#c5e0d3"}
-            attenuationDistance={1.4}
-          />
+          <meshPhysicalMaterial color="#ffffff" roughness={0.15} metalness={0} clearcoat={0.3} />
         </mesh>
         {/* Right root */}
         <mesh position={[0.38, -0.55, 0]} rotation={[0, 0, -0.15]}>
           <capsuleGeometry args={[0.28, 0.85, 12, 24]} />
-          <MeshTransmissionMaterial
-            thickness={0.7}
-            roughness={0.08}
-            transmission={1}
-            ior={1.3}
-            color={"#ffffff"}
-            attenuationColor={"#c5e0d3"}
-            attenuationDistance={1.4}
-          />
+          <meshPhysicalMaterial color="#ffffff" roughness={0.15} metalness={0} clearcoat={0.3} />
         </mesh>
         {/* Inner golden glow */}
         <mesh position={[0, 0.35, 0]}>
-          <sphereGeometry args={[0.35, 32, 32]} />
+          <sphereGeometry args={[0.35, 16, 16]} />
           <meshBasicMaterial color={"#e6c079"} transparent opacity={0.35} />
         </mesh>
       </Float>
@@ -95,7 +67,7 @@ export function Tooth3D() {
   }
   return (
     <Canvas
-      dpr={[1, 1.75]}
+      dpr={[1, 1.2]}
       camera={{ position: [0, 0, 4], fov: 40 }}
       gl={{ antialias: true, alpha: true }}
     >
