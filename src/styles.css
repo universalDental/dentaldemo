@@ -125,7 +125,7 @@
 
 @utility glass {
   background: color-mix(in oklab, white 55%, transparent);
-  backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(120%);
   border: 1px solid color-mix(in oklab, white 65%, transparent);
   box-shadow: var(--shadow-glass);
 }
@@ -202,4 +202,17 @@
     linear-gradient(90deg, color-mix(in oklab, var(--foreground) 5%, transparent) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
