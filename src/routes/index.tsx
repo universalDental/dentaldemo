@@ -76,7 +76,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-clip">
-      <SmoothScroll />
+      {/* <SmoothScroll /> */}
       <Nav />
       <main>
         <Hero />
@@ -183,12 +183,12 @@ function Hero() {
       {/* orbs */}
       <div
         aria-hidden
-        className="absolute -top-32 -left-24 size-[520px] rounded-full blur-3xl opacity-60 animate-orb"
+        className="absolute -top-32 -left-24 size-[520px] rounded-full blur-3xl opacity-60"
         style={{ background: "radial-gradient(circle at 30% 30%, oklch(0.9 0.06 165), transparent 60%)" }}
       />
       <div
         aria-hidden
-        className="absolute top-1/2 -right-40 size-[560px] rounded-full blur-3xl opacity-50 animate-orb"
+        className="absolute top-1/2 -right-40 size-[560px] rounded-full blur-3xl opacity-50"
         style={{
           background: "radial-gradient(circle at 60% 40%, oklch(0.86 0.09 82), transparent 60%)",
           animationDelay: "-6s",
